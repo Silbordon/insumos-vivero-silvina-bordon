@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    justify-content:space-around;
+    width: 600px;
+    flex-direction: row;
+    font-size: 1.2em; 
+}
+
+.nav-item{
+    transition: border-radius 2s;
+
+}
+
+.nav-item:hover{
+    text-decoration:underline;
+    font-weight: 600;
+    background-color: rgb(138, 228, 138);
+    border-radius: 10px;
+
+}
