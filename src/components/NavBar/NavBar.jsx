@@ -3,6 +3,7 @@ import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container, Figure 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBar.css';
 import logo from '../../img/logo2.jpeg'
+import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
     return (
@@ -44,6 +45,7 @@ const NavBar = () => {
                             aria-label="Search"
                         />
                         <Button variant="outline-success">Buscador</Button>
+                        <CartWidget></CartWidget>
                     </Form>
                 </Navbar.Collapse>
             </Container>

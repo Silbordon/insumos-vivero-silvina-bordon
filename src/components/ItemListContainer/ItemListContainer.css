@@ -1,0 +1,12 @@
+.itemList-Container{
+    height: 100vh;
+    padding: 2em;
+}
+
+.container-item{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+
