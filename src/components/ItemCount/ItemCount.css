@@ -1,0 +1,38 @@
+.container-btnCounter{
+width: 250px;
+border-radius: 10px;
+height: max-content;
+display: flex;
+flex-direction: column;
+}
+
+.title-card-btnCounter{
+    background-color:rgba(247, 245, 240, 0.845);
+}
+
+.container-counter{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-counter > button{
+   font-size: 15px;
+    text-align: center;
+    border-radius: 9px;
+    font-weight: bolder;
+}
+
+.container-counter > p{
+   margin-top: none;
+}
+
+.btn-cart{
+    width: 100%;
+    border-radius: 9px;
+    font-size: 0.8rem;
+    padding: 2%;
+    margin-top: 3%;
+}
