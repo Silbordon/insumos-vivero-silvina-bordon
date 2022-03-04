@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container, Figure } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBar.css';
 import logo from '../../img/logo2.jpeg'
@@ -29,11 +29,10 @@ const NavBar = () => {
                         <NavDropdown title="Productos" className="nav-item" id="navbarScrollingDropdown">
                             <NavDropdown.Item href="#action3">Plantas Interior</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Plantas Exterior</NavDropdown.Item>
-                            <NavDropdown.Item href="#action5">Césped</NavDropdown.Item>                            <NavDropdown.Item href="#action5">Cesped</NavDropdown.Item>
                             <NavDropdown.Item href="#action6">Fertilizantes</NavDropdown.Item>
                             <NavDropdown.Item href="#action7">Agroquímicos</NavDropdown.Item>
-                            <NavDropdown.Item href="#action8">Fertilizantes</NavDropdown.Item>                            <NavDropdown.Item href="#action6">Fertilizantes</NavDropdown.Item>
                             <NavDropdown.Item href="#action9">Sustratos</NavDropdown.Item>
+                            <NavDropdown.Item href="#action2">Césped</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link href="#" className="nav-item">Regalá</Nav.Link>
                     </Nav>
@@ -45,7 +44,7 @@ const NavBar = () => {
                             aria-label="Search"
                         />
                         <Button variant="outline-success">Buscador</Button>
-                        <CartWidget></CartWidget>
+                        <CartWidget />
                     </Form>
                 </Navbar.Collapse>
             </Container>
