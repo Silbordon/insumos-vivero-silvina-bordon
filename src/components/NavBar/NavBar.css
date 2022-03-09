@@ -11,10 +11,10 @@
 
 }
 
-.nav-item:hover{
+.nav-item:hover, .dropdown-toggle:hover{
     text-decoration:underline;
     font-weight: 600;
-    background-color: rgb(138, 228, 138);
+    background-color: rgb(84, 151, 84);
     border-radius: 10px;
-
+    color: ivory !important;
 }
