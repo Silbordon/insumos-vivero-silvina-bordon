@@ -1,0 +1,17 @@
+.bstext{
+font-style: italic;
+font-weight:600;
+font-size: small;
+}
+
+.btn-success{
+transition: all 2s;
+}
+
+.btn-success:hover{
+    text-decoration:underline;
+    background-color: rgba(199, 223, 199, 0.972) !important;
+    color: rgb(23, 42, 27) !important;
+    font-weight: 500;
+    box-shadow: 3px 4px 14px -4px rgba(113,133,124,0.72);
+}
