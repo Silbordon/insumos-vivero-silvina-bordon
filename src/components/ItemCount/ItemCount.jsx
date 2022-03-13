@@ -2,7 +2,7 @@ import './ItemCount.css'
 import { Card, Button } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 
-const ItemCount = ({ stock, initial, setInitial }) => {
+const ItemCount = ({ stock, initial, setInitial, price }) => {
 
     const [disableAdd, setdisableAdd] = useState(true)
     const [disableDelet, setdisableDelet] = useState(true)
@@ -36,7 +36,7 @@ const ItemCount = ({ stock, initial, setInitial }) => {
     }
     return (
         <Card className='container-btnCounter'>
-            <Card.Header as="h5" className="title-card-btnCounter">Producto</Card.Header>
+            <Card.Header as="h5" className="title-card-btnCounter">Precio por unidad: {price}</Card.Header>
             <Card.Body>
                 <div className="container-counter">
                     <Button

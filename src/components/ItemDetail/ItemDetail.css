@@ -1,0 +1,36 @@
+
+.modal{
+    background-color: rgba(107, 152, 121, 0.249);
+}
+.container{
+    width: auto!important;
+}
+
+.container-modal{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container-modal-col{
+display: flex;
+justify-content: center;
+}
+
+
+.container-text {
+    margin-top: 5%;
+}
+
+.container-text > h5, .container-text > h6{
+    font-weight: bolder;
+}
+
+.container-text > p{
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.container-modal-col > .card{
+    margin-top:20%;
+}
