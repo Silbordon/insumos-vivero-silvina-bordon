@@ -11,7 +11,6 @@ const ItemDetail = (props) => {
     const {data} = props
     const [initial, setInitial] = useState(1)
 
-  
         return (
             <Modal
                 {...props}
@@ -51,8 +50,6 @@ const ItemDetail = (props) => {
                         </Row>
                     </Container>
                 </Modal.Body>
-
-
             </Modal>
         );
     }

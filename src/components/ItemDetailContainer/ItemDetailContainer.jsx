@@ -12,12 +12,15 @@ const ItemDetailContainer = ({ modalShow, setModalShow, id }) => {
 
     if (data.loading || !data.results) {
         return <Loading />;
-      }
+    }
     return (
+        <div>
             <ItemDetail
                 data={data?.results}
                 show={modalShow}
-                onHide={() => setModalShow(false)} /> 
+                onHide={() => setModalShow(false)} />
+        </div>
+
     );
 };
 
