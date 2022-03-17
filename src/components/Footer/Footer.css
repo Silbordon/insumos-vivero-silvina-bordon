@@ -1,0 +1,66 @@
+.container-position{
+    position: relative;
+    width: 100%;
+}
+.btcontainer-footer{
+    background-color: rgba(51, 168, 71, 0.527);
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 10px;
+}
+h4{
+    font-size: 17px;
+    
+}
+.container-social{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.social{
+    width: 30px;
+}
+
+.contact{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: start;
+   /* width: 20%; */
+}
+
+.contact > h6{
+    font-size: 10px;
+
+}
+
+.icon{
+    width: 12px;
+    margin-right:5px;
+}
+
+@media (max-width: 550px){
+    h4{
+        font-size: 12px;
+    }
+    .contact > h6{
+        font-size: 9px;
+    
+    }
+    .social{
+        width: 17px;
+    }
+
+    .contact{
+        width: 150px;
+    }
+}
+
+@media (max-width:300px){
+    .title-redes{
+        text-align: center;
+    }
+}

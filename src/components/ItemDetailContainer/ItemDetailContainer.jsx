@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ItemDetailContainer.css'
 import useFetch from '../hooks/useFetch';
 import ItemDetail from '../ItemDetail/ItemDetail';

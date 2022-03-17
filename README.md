@@ -1,3 +1,20 @@
-# Ecommerce Insumos Vivero Silvi
 
-Es el template para el proyecto Insumos Vivero para el desafio entregable de CoderHouse. 
+
+
+# ***Ecommerce Insumos Vivero Silvi***
+
+## Aplicación desarrollada con [React](https://es.reactjs.org/) como proyecto del curso de Coderhouse. La misma es una simulacion de eccomerce de insumos de un vivero. 
+<br>
+
+
+### 📍***Este proyecto utiliza las siguientes dependencias:***
+📁 [React Router](https://reactrouter.com/)
+
+📁 [Bootstrap-React](https://react-bootstrap.netlify.app/)
+
+📁 [Fontawesome](https://fontawesome.com/v5/docs/web/use-with/react)
+
+
+
+
+
