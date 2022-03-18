@@ -18,3 +18,22 @@
     border-radius: 10px;
     color: ivory !important;
 }
+
+.logo-style{
+    cursor: pointer;
+    width: 290px;
+    height: 60px;
+}
+
+@media (max-width:400px){
+    .logo-style{
+        width: 230px;
+    }
+}
+
+@media (max-width:300px){
+    .logo-style{
+        width: 160px;
+        height: 40px;
+    }
+}

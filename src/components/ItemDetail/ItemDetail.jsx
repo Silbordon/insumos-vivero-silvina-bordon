@@ -4,7 +4,6 @@ import { Modal } from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import { Row, Col, Container } from 'react-bootstrap';
 import { useState } from 'react';
-import logo from '../../img/int1.jpeg'
 
 const ItemDetail = (props) => {
     console.log(props);
@@ -28,7 +27,7 @@ const ItemDetail = (props) => {
                         <Row className="container-modal">
                             <Col xs={12} md={8} lg={6} className="container-modal-col" >
                                 <div >
-                                    <img src={logo} style={{ width: '100%' }} alt="" />
+                                    <img src={data.pictureUrl} style={{ width: '100%' }} alt="" />
                                     <div className="container-text">
                                         <h5>Caracteristicas</h5>
                                         <p>

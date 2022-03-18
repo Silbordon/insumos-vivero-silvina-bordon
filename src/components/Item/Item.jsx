@@ -11,7 +11,7 @@ const Item = ({ result }) => {
     const [modalShow, setModalShow] = useState(false);
 
     return (
-        <Card style={{ width: '18rem' }} border="light" bg="light">
+        <Card style={{ width: '18rem' }} border="light" bg="light" className='container-card'>
             <Card.Img variant="top" src={pictureUrl} />
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
@@ -24,7 +24,6 @@ const Item = ({ result }) => {
                     show={modalShow}
                     onHide={() => setModalShow(false)}
                 /> : null}
-                
             </Card.Body>
         </Card>
     );

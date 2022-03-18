@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const useFetch = (url) => {
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const {catName} = useParams()
 
+    console.log(catName);
     useEffect(() => {
         setTimeout(() => {
             const getData = () => {
@@ -18,9 +21,9 @@ const useFetch = (url) => {
             }
             getData();
         }, 2000);
-    }, [url])
+    }, [catName])
 
-    return { results, loading };
+    return { results, loading, catName };
 }
 
 export default useFetch;

@@ -10,12 +10,11 @@ const NavBar = () => {
         <Navbar bg="light" expand="lg" style={{ paddingLeft: "10px", paddingRight: "10px" }}>
             <Container fluid>
                 <Navbar.Brand 
-                    href="#">
+                    href="/">
                         <img 
+                            className="logo-style"
                             src={logo} 
                             alt="imagen del logo del vivero memé" 
-                            width="290px"
-                            height="60px"
                         />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -25,16 +24,16 @@ const NavBar = () => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link href="#action1" className="nav-item">Home</Nav.Link>
+                        <Nav.Link href="/" className="nav-item">Home</Nav.Link>
                         <NavDropdown title="Productos" className="nav-item" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Plantas Interior</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Plantas Exterior</NavDropdown.Item>
-                            <NavDropdown.Item href="#action6">Fertilizantes</NavDropdown.Item>
-                            <NavDropdown.Item href="#action7">Agroquímicos</NavDropdown.Item>
-                            <NavDropdown.Item href="#action9">Sustratos</NavDropdown.Item>
-                            <NavDropdown.Item href="#action2">Césped</NavDropdown.Item>
+                            <NavDropdown.Item href="/category/Interior">Plantas Interior</NavDropdown.Item>
+                            <NavDropdown.Item href="/category/Exterior">Plantas Exterior</NavDropdown.Item>
+                            <NavDropdown.Item href="/category/Fertilizantes">Fertilizantes</NavDropdown.Item>
+                            <NavDropdown.Item href="/category/Agroquimicos">Agroquímicos</NavDropdown.Item>
+                            <NavDropdown.Item href="/category/Sustratos">Sustratos</NavDropdown.Item>
+                            <NavDropdown.Item href="/category/Cesped">Césped</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="#" className="nav-item">Regalá</Nav.Link>
+                        <Nav.Link href="/regala" className="nav-item">Regalá</Nav.Link>
                     </Nav>
                     <Form className="d-flex">
                         <FormControl
