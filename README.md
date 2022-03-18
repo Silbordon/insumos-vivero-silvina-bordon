@@ -1,7 +1,7 @@
 
 
 
-# ***Ecommerce Insumos Vivero Silvi***
+# *** 🌱 Ecommerce Insumos Vivero Meme 🪴***
 
 ## Aplicación desarrollada con [React](https://es.reactjs.org/) como proyecto del curso de Coderhouse. La misma es una simulacion de eccomerce de insumos de un vivero. 
 <br>
@@ -14,7 +14,6 @@
 
 📁 [Fontawesome](https://fontawesome.com/v5/docs/web/use-with/react)
 
-
-
+### Hecho con amor por mi 💕
 
 

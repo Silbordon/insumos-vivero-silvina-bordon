@@ -20,8 +20,9 @@ function App() {
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/category/:catName" element={<ItemListContainer />} />
-            {/* <Route path="/item/itemId" element={<ItemDetailContainer />} /> */}
+            <Route path="/item/:itemIdParams" element={<ItemDetailContainer />} />
             <Route path="/regala" element={<Gift />} />
+            <Route path="/cart" element={<ItemListContainer />} />
             <Route path="*" element={<Error to='/' />} />
           </Routes>
 
