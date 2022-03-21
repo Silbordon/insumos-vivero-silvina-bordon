@@ -16,10 +16,6 @@ const ItemDetailContainer = ({ modalShow, setModalShow, id }) => {
 
     const [modalShowValue, setModalShowValue ] = useState(true);
 
-    // if(modalShow){
-    //     setModalShowValue(modalShow);
-    // }
-    
     const hideModal = ()=>{
         if(itemIdParams){
             setModalShowValue(false)

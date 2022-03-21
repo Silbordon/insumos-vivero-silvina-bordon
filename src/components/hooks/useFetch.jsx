@@ -7,7 +7,6 @@ const useFetch = (url) => {
 
     const {catName} = useParams()
 
-    console.log(catName);
     useEffect(() => {
         setTimeout(() => {
             const getData = () => {
