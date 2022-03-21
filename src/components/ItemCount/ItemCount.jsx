@@ -2,7 +2,7 @@ import './ItemCount.css'
 import { Card, Button } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 
-const ItemCount = ({ stock, initial, setInitial, price }) => {
+const ItemCount = ({ stock, initial, setInitial, price, handlerAdd}) => {
 
     const [disableAdd, setdisableAdd] = useState(true)
     const [disableDelet, setdisableDelet] = useState(true)
@@ -13,7 +13,10 @@ const ItemCount = ({ stock, initial, setInitial, price }) => {
         }
 
         if(initial === stock){
+            alert("es tu oportunidad! :) este es el ultimo disponible")
             setdisableAdd(false)
+        }
+        if(initial > stock){
             alert("UPS! :( no hay mas productos disponibles")
         }
         return () => {}
@@ -52,6 +55,7 @@ const ItemCount = ({ stock, initial, setInitial, price }) => {
                     >-</Button>
                 </div>
                 <Button
+                    onClick={handlerAdd}
                     className="btn-cart"
                     variant="outline-success">
                     Agregar al carrito

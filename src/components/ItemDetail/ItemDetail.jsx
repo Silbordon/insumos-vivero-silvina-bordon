@@ -6,9 +6,21 @@ import { Row, Col, Container } from 'react-bootstrap';
 import { useState } from 'react';
 
 const ItemDetail = (props) => {
-    console.log(props);
     const {data} = props
+    const {id, title, description, recomendation, price, stock} = data
+
     const [initial, setInitial] = useState(1)
+
+    const handlerAdd = () =>{
+        const itemCart = {
+           id,
+           price,
+           initial,
+           title
+        }
+        props.onHide()
+        console.log(itemCart);
+    }
 
         return (
             <Modal
@@ -19,7 +31,7 @@ const ItemDetail = (props) => {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        {data.title}
+                        {title}
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="show-grid">
@@ -31,17 +43,18 @@ const ItemDetail = (props) => {
                                     <div className="container-text">
                                         <h5>Caracteristicas</h5>
                                         <p>
-                                           {data.description}
+                                           {description}
                                         </p>
                                         <h6>Recomendaciones para su Cuidado:</h6>
-                                        <p>{data.recomendation}</p>
+                                        <p>{recomendation}</p>
                                     </div>
                                 </div>
                             </Col>
                             <Col xs={12} md={4} lg={6} className="container-modal-col">
                                 <ItemCount
-                                    price={data.price}
-                                    stock={5}
+                                    handlerAdd = {handlerAdd}
+                                    price={price}
+                                    stock={stock}
                                     initial={initial}
                                     setInitial={setInitial}
                                 />
