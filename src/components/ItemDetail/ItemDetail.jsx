@@ -1,26 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './ItemDetail.css'
 import { Modal } from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import { Row, Col, Container } from 'react-bootstrap';
 import { useState } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = (props) => {
     const {data} = props
     const {id, title, description, recomendation, price, stock} = data
 
     const [initial, setInitial] = useState(1)
+    const {addItem, isInCart} = useContext (CartContext)
 
     const handlerAdd = () =>{
-        const itemCart = {
-           id,
-           price,
-           initial,
-           title
+        if(!isInCart(id)){
+            const itemCart = {
+                id,
+                price,
+                initial,
+                title
+             }
+             props.onHide()
+             addItem(itemCart);
+        }else{
+            alert('tienes este producto repetido en el carrito')
         }
-        props.onHide()
-        console.log(itemCart);
+        
     }
+   
 
         return (
             <Modal
