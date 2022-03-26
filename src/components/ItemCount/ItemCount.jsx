@@ -1,25 +1,26 @@
 import './ItemCount.css'
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Stack } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const ItemCount = ({ stock, initial, setInitial, price, handlerAdd}) => {
+const ItemCount = ({ stock, initial, setInitial, price, handlerAdd, hide, btnBuy}) => {
 
     const [disableAdd, setdisableAdd] = useState(true)
     const [disableDelet, setdisableDelet] = useState(true)
 
     useEffect(() => {
-        if(initial === 0){
+        if (initial === 0) {
             setdisableDelet(false)
         }
 
-        if(initial === stock){
+        if (initial === stock) {
             alert("es tu oportunidad! :) este es el ultimo disponible")
             setdisableAdd(false)
         }
-        if(initial > stock){
+        if (initial > stock) {
             alert("UPS! :( no hay mas productos disponibles")
         }
-        return () => {}
+        return () => { }
     }, [initial])
 
     const addfunction = () => {
@@ -27,7 +28,7 @@ const ItemCount = ({ stock, initial, setInitial, price, handlerAdd}) => {
             setInitial(initial + 1)
             setdisableAdd(true)
             setdisableDelet(true)
-        } 
+        }
     }
 
     const deletefunction = () => {
@@ -40,7 +41,7 @@ const ItemCount = ({ stock, initial, setInitial, price, handlerAdd}) => {
     return (
         <Card className='container-btnCounter'>
             <Card.Header as="h5" className="title-card-btnCounter">Precio por unidad: {price}</Card.Header>
-            <Card.Body>
+            <Card.Body >
                 <div className="container-counter">
                     <Button
                         disabled={!disableAdd}
@@ -54,12 +55,38 @@ const ItemCount = ({ stock, initial, setInitial, price, handlerAdd}) => {
                         onClick={() => deletefunction()}
                     >-</Button>
                 </div>
-                <Button
+                {!btnBuy ? <Button
                     onClick={handlerAdd}
                     className="btn-cart"
-                    variant="outline-success">
+                    variant="success">
                     Agregar al carrito
-                </Button>
+                </Button> :
+                    <div >
+                        <Stack gap={2} className="col-md-5 mx-auto btn-extras">
+                            <Link to="/">
+                                <Button
+                                    onClick={() => hide()}
+                                    variant="outline-dark"
+                                    size="sm"
+                                    className='btn-cart-extras'
+                                >Seguir Comprando
+                                </Button>
+
+                            </Link>
+                            <Link to="/cart">
+                                <Button
+                                    onClick={() => hide()}
+                                    variant="outline-secondary"
+                                    size="sm"
+                                    className='btn-cart-extras'
+                                >Terminar Compra
+                                </Button>
+                            </Link>
+
+                        </Stack>
+                    </div>
+                }
+
             </Card.Body>
         </Card>
     );

@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Gift from './components/Gift/Gift';
 import CustomProvider from './context/CustomProvider';
+import Cart from './components/Cart/Cart';
 
 
 
@@ -25,7 +26,7 @@ function App() {
             <Route path="/category/:catName" element={<ItemListContainer />} />
             <Route path="/item/:itemIdParams" element={<ItemDetailContainer />} />
             <Route path="/regala" element={<Gift />} />
-            <Route path="/cart" element={<ItemListContainer />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<Error to='/' />} />
           </Routes>
 
