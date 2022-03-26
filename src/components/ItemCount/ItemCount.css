@@ -38,3 +38,12 @@ box-shadow: 3px 4px 14px -4px rgba(113,133,124,0.72);
     padding: 2%;
     margin-top: 3%;
 }
+
+.btn-extras{
+    margin-top: 15px;
+    border-radius: 9px !important;
+}
+
+.btn-cart-extras{
+    border-radius: 9px !important;
+}

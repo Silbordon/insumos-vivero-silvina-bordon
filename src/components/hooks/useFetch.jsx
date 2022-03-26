@@ -20,6 +20,7 @@ const useFetch = (url) => {
             }
             getData();
         }, 2000);
+        return () => { }
     }, [catName])
 
     return { results, loading, catName };

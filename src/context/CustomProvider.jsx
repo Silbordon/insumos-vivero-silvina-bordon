@@ -14,11 +14,17 @@ const CustomProvider = ({ children }) => {
         setCartProduct(cartProduct.filter((product) => product.id !== id))
     }
 
-    
     const clear = () => {
         setCartProduct([])
     }
 
+    const totalItem = () =>{
+        return cartProduct.reduce((acc, producto) => acc + producto.initial, 0)
+    }
+
+    const totalprice = () =>{
+        return cartProduct.reduce((acc, producto) => acc + producto.price*producto.initial, 0)
+    }
 
     const isInCart = (id) => {
         return cartProduct.some((product) => product.id === id)
@@ -27,7 +33,7 @@ const CustomProvider = ({ children }) => {
 
     console.log(cartProduct);
     return (
-        <CartContext.Provider value={{ cartProduct, addItem, removeItem, clear, isInCart }}>
+        <CartContext.Provider value={{ cartProduct, addItem, removeItem, clear, isInCart, totalItem, totalprice }}>
             {children}
         </CartContext.Provider>
     );

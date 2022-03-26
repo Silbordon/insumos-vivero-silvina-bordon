@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState} from 'react';
 import './ItemDetail.css'
 import { Modal } from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
-import { Row, Col, Container } from 'react-bootstrap';
-import { useState } from 'react';
+import { Row, Col, Container} from 'react-bootstrap';
 import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = (props) => {
@@ -11,6 +10,7 @@ const ItemDetail = (props) => {
     const {id, title, description, recomendation, price, stock} = data
 
     const [initial, setInitial] = useState(1)
+    const [btnBuy, setBtnBuy] = useState(false)
     const {addItem, isInCart} = useContext (CartContext)
 
     const handlerAdd = () =>{
@@ -21,12 +21,12 @@ const ItemDetail = (props) => {
                 initial,
                 title
              }
-             props.onHide()
+            //  props.onHide()
              addItem(itemCart);
         }else{
             alert('tienes este producto repetido en el carrito')
         }
-        
+        setBtnBuy(true)
     }
    
 
@@ -60,6 +60,8 @@ const ItemDetail = (props) => {
                             </Col>
                             <Col xs={12} md={4} lg={6} className="container-modal-col">
                                 <ItemCount
+                                    btnBuy={btnBuy}
+                                    hide={props.onHide}
                                     handlerAdd = {handlerAdd}
                                     price={price}
                                     stock={stock}
