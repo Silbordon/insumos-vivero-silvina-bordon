@@ -1,7 +1,15 @@
 .itemList-Container{
-    /* height: 100vh; */
     padding: 2em;
+    margin-top: 20%;
 }
 
+.title-categories{
+    margin-top: -400px;
+    margin-bottom: 20px;
+}
 
-
+@media (max-width:1300px){
+    .itemList-Container{
+        margin-top: 400px;
+    }
+}

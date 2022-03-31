@@ -16,13 +16,25 @@ transition: all 2s;
     box-shadow: 3px 4px 14px -4px rgba(113,133,124,0.72);
 }
 
-.container-card{
+.cardcontainer{
     transition: all 1s;
     box-shadow: 3px 4px 14px -6px rgba(113,133,124,0.72);
     cursor: pointer;
+
 }
 
-.container-card:hover{
+.cardcontainer:hover{
     box-shadow: 3px 4px 14px 2px rgba(113,133,124,0.72);
 
+}
+
+.card-img-item{
+    width: 200px;
+    height: 60%;
+}
+
+.card-body-item{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
 }

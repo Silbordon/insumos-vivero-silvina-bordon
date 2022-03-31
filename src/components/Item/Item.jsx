@@ -11,9 +11,9 @@ const Item = ({ result }) => {
     const [modalShow, setModalShow] = useState(false);
 
     return (
-        <Card style={{ width: '18rem' }} border="light" bg="light" className='container-card'>
-            <Card.Img variant="top" src={pictureUrl} />
-            <Card.Body>
+        <Card style={{ width: '17rem', height:'27rem' }} border="light" bg="light" className='cardcontainer'>
+            <Card.Img variant="top" src={pictureUrl} className='card-img-item' />
+            <Card.Body className="card-body-item">
                 <Card.Title>{title}</Card.Title>
                 <Card.Text className="bstext">Precio: {price}</Card.Text>
                 <Button variant="success" onClick={() => setModalShow(true)}>Ver Más</Button>
