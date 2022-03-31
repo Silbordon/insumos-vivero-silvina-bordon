@@ -5,8 +5,8 @@ import './ItemList.css'
 import Loading from '../Loading/Loading';
 
 // contenedor de las item-card
-const ItemList = ({ data }) => {
-    const { results, loading } = data
+const ItemList = (props) => {
+    const { results, loading } = props
 
 
   if (loading || !results) {

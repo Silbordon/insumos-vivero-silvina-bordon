@@ -6,8 +6,8 @@ import { Row, Col, Container} from 'react-bootstrap';
 import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = (props) => {
-    const {data} = props
-    const {id, title, description, recomendation, price, stock} = data
+    const {result} = props
+    const {id, title, description, recomendation, price, stock, pictureUrl} = result
 
     const [initial, setInitial] = useState(1)
     const [btnBuy, setBtnBuy] = useState(false)
@@ -47,7 +47,7 @@ const ItemDetail = (props) => {
                         <Row className="container-modal">
                             <Col xs={12} md={8} lg={6} className="container-modal-col" >
                                 <div >
-                                    <img src={data.pictureUrl} style={{ width: '100%' }} alt="" />
+                                    <img src={pictureUrl} style={{ width: '100%' }} alt="" />
                                     <div className="container-text">
                                         <h5>Caracteristicas</h5>
                                         <p>
