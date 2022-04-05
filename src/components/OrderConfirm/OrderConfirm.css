@@ -1,0 +1,35 @@
+.confirm-container{
+    height: calc( 100vh - 64px );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+  .confirm{
+    background-image: url('../../img/confirm.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 300px;
+    width: 450px;
+  }
+  
+  .p-confirm{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin: 10px 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* MEDIA */
+  
+  @media ( max-width: 700px){
+    .confirm{
+      height: 200px;
+      width: 250px;
+    }
+  }
+  

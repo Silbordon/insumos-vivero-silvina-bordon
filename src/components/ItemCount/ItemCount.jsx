@@ -9,7 +9,7 @@ const ItemCount = ({ stock, initial, setInitial, price, handlerAdd, hide, btnBuy
     const [disableDelet, setdisableDelet] = useState(true)
 
     useEffect(() => {
-        if (initial === 0) {
+        if (initial === 1) {
             setdisableDelet(false)
         }
 
@@ -32,7 +32,7 @@ const ItemCount = ({ stock, initial, setInitial, price, handlerAdd, hide, btnBuy
     }
 
     const deletefunction = () => {
-        if (initial > 0) {
+        if (initial > 1) {
             setInitial(initial - 1)
             setdisableDelet(true)
             setdisableAdd(true)

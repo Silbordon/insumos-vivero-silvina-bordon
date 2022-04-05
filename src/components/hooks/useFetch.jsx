@@ -1,3 +1,5 @@
+//se comento porque se utilizo firebase en lugar de la mockApi
+
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
