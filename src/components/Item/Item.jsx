@@ -15,7 +15,7 @@ const Item = ({ result }) => {
             <Card.Img variant="top" src={pictureUrl} className='card-img-item' />
             <Card.Body className="card-body-item">
                 <Card.Title>{title}</Card.Title>
-                <Card.Text className="bstext">Precio: {price}</Card.Text>
+                <Card.Text className="bstext">Precio: ${price}</Card.Text>
                 <Button variant="success" onClick={() => setModalShow(true)}>Ver Más</Button>
                 {modalShow ? <ItemDetailContainer
                     id={id}

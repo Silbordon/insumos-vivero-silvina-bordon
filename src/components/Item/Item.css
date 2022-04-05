@@ -20,7 +20,7 @@ transition: all 2s;
     transition: all 1s;
     box-shadow: 3px 4px 14px -6px rgba(113,133,124,0.72);
     cursor: pointer;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .cardcontainer:hover{

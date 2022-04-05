@@ -9,6 +9,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Gift from './components/Gift/Gift';
 import CustomProvider from './context/CustomProvider';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
+import OrdeConfirm from './components/OrderConfirm/OrdeConfirm';
 
 
 
@@ -27,6 +29,8 @@ function App() {
             <Route path="/item/:itemIdParams" element={<ItemDetailContainer />} />
             <Route path="/regala" element={<Gift />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/ordeConfirm" element={<OrdeConfirm />} />
             <Route path="*" element={<Error to='/' />} />
           </Routes>
 
