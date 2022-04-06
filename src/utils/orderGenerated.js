@@ -1,6 +1,7 @@
 import React from 'react';
 import { collection, addDoc, Timestamp, writeBatch, query, where, documentId, getDocs } from 'firebase/firestore';
 import { db } from './firebase';
+import Swal from 'sweetalert2'
 
 
 const orderGenerated = async(valuesInput, cartProduct, totalprice,setOrderId,clear) => {
@@ -40,7 +41,7 @@ const orderGenerated = async(valuesInput, cartProduct, totalprice,setOrderId,cle
                 clear()
             })
     }else{
-        alert("Hay productos sin stock, te solicitamos revises tus productos seleccionados")
+        Swal.fire('CUIDADO', 'Hay productos sin stock, te solicitamos revises tus productos seleccionados', 'warning')
     }
 }
 
