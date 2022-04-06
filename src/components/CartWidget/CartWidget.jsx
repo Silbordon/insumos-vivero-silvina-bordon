@@ -9,7 +9,6 @@ import { useContext } from 'react';
 const CartWidget = () => {
 
     const { totalItem } = useContext(CartContext)
-    console.log(totalItem);
 
     return (
         <Link to="/cart">

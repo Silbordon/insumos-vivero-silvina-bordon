@@ -4,148 +4,92 @@ import { useContext } from 'react';
 import './Checkout.css';
 import { Form, Button } from 'react-bootstrap';
 import CartEmpty from '../CartEmpty/CartEmpty';
-import { collection, addDoc, Timestamp, writeBatch, query, where, documentId, getDocs } from 'firebase/firestore';
-import { db } from '../../utils/firebase';
 import OrdeConfirm from '../OrderConfirm/OrdeConfirm';
-
+import orderGenerated from '../../utils/orderGenerated';
+import { useFormik } from 'formik';
+import * as yup from 'yup';
 
 const Checkout = () => {
 
     const { cartProduct, totalprice, totalItem, clear } = useContext(CartContext);
     const [orderId, setOrderId] = useState();
-    const [validated, setValidated] = useState(false);
-    const [valuesInput, setValuesInput] = useState({
-        nombre: '',
-        email: '',
-        phone: ''
-    });
 
-
-    const handlerInputChange = (e) => {
-        setValuesInput({
-            ...valuesInput,
-            [e.target.name]: e.target.value
+    const formik = useFormik({
+        initialValues: {
+            nombre: '',
+            email: '',
+            phone: ''
+        },
+        validationSchema: yup.object({
+            nombre: yup.string().matches(/^([A-Z a-z]+[\s]*)+$/, 'solo se aceptan letras').required("nombre  obligatorio*"),
+            email: yup.string().email("no es un email valido").required("email obligatorio*"),
+            phone: yup.number().required("telefono de contacto obligatorio")
         })
-    };
-
-    const sendOrder = (event) => {
-        const form = event.currentTarget;
-      
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            event.preventDefault();
-            orderGenerated()
+        ,
+        onSubmit: () => {
+            orderGenerated(formik.values, cartProduct, totalprice, setOrderId, clear)
         }
-        
-        setValidated(true);
-    }
-
-    //firebase
-    const orderGenerated = async() => {
-        const order = {
-            buyer: valuesInput,
-            items: cartProduct,
-            total: totalprice(),
-            dateHs : Timestamp.fromDate(new Date())
-        }
-        const batch = writeBatch(db);
-        const orderRef = collection(db, 'orders');
-        const allProductRef = collection(db, 'items')
-
-        const q = query(allProductRef, where(documentId(), 'in', cartProduct.map((el) => el.id)))
-        const products = await getDocs(q);
-        const outstock = [];
-
-       products.docs.forEach((doc) =>{
-            const item = cartProduct.find((el) => el.id === doc.id)
-
-            if(doc.data().stock >= item.initial){
-                batch.update(doc.ref, {
-                    stock: doc.data().stock - item.initial
-                })
-            }else{
-                outstock.push(item)
-            }
-        })
-
-        if(outstock.length === 0){
-            addDoc(orderRef, order)
-                .then((doc) =>{
-                    batch.commit()
-                    setOrderId(doc.id)
-                    clear()
-                })
-        }else{
-            alert("Hay productos sin stock, te solicitamos revises tus productos seleccionados")
-        }
-    }
-
-   
-
-    if(orderId) {
-        return <OrdeConfirm orderId={orderId}/>
-    }
-
+    })
     
+    if (orderId) {
+        return <OrdeConfirm orderId={orderId} />
+    }
+
 
     return (
         <div>
             {totalItem() === 0 ? <CartEmpty /> :
                 <div className="form-container">
                     <h1>CONFIRMACION DE LA ORDEN</h1>
-
-                    <Form noValidate validated={validated} onSubmit={sendOrder}>
-
-                        <Form.Group controlId="validationCustomUsername">
-                            <Form.Label>Nombre completo</Form.Label>
+                    <Form onSubmit={formik.handleSubmit} >
+                        <Form.Group controlId="validationCustom04">
+                            <Form.Label className="container-label">
+                                Nombre completo
+                            </Form.Label>
                             <Form.Control
+                                className="container-input"
                                 required
                                 type="text"
                                 placeholder="Ingresa tu nombre completo"
-                                value={valuesInput.nombre}
                                 name='nombre'
-                                onChange={handlerInputChange}
+                                onChange={formik.handleChange}
                             />
-                            <Form.Control.Feedback>correcto!</Form.Control.Feedback>
-                            <Form.Control.Feedback type="invalid">
-                                Campo incorrecto o vacio.
-                            </Form.Control.Feedback>
+                            <Form.Text className="  text-danger" >
+                                {formik.errors.nombre}
+                            </Form.Text>
                         </Form.Group>
-
                         <Form.Group controlId="validationCustom02">
-                            <Form.Label>Direccion de correo electronico</Form.Label>                    <Form.Control
+                            <Form.Label className="container-label">
+                                Direccion de correo electronico
+                            </Form.Label>
+                            <Form.Control
+                                className="container-input"
                                 required
                                 type="email"
                                 placeholder="Ingresa tu email"
-                                value={valuesInput.email}
                                 name='email'
-                                onChange={handlerInputChange}
+                                onChange={formik.handleChange}
                             />
-                            <Form.Control.Feedback>correcto!</Form.Control.Feedback>
-                            <Form.Control.Feedback type="invalid">
-                                Campo incorrecto o vacio.
-                            </Form.Control.Feedback>
+                            <Form.Text className="  text-danger" >
+                                {formik.errors.email}
+                            </Form.Text>
                         </Form.Group>
-
                         <Form.Group controlId="validationCustom01">
-                            <Form.Label>Telefono</Form.Label>
+                            <Form.Label className="container-label">
+                                Telefono
+                            </Form.Label>
                             <Form.Control
+                                className="container-input"
                                 required
                                 type="number"
                                 placeholder="Ingresa tu telefono"
-                                value={valuesInput.phone}
                                 name='phone'
-                                onChange={handlerInputChange}
+                                onChange={formik.handleChange}
                             />
-                            <Form.Control.Feedback>correcto!</Form.Control.Feedback>
-                            <Form.Control.Feedback type="invalid">
-                                Campo incorrecto o vacio.
-                            </Form.Control.Feedback>
+                            <Form.Text className="  text-danger" >
+                                {formik.errors.phone}
+                            </Form.Text>
                         </Form.Group>
-
-
                         <Button
                             variant="success"
                             type="submit"
@@ -153,8 +97,6 @@ const Checkout = () => {
                         >
                             Enviar su orden
                         </Button>
-
-
                     </Form>
                 </div>
             }
