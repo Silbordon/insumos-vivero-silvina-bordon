@@ -2,6 +2,8 @@ import './ItemCount.css'
 import { Card, Button, Stack } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2'
+
 
 const ItemCount = ({ stock, initial, setInitial, price, handlerAdd, hide, btnBuy}) => {
 
@@ -14,11 +16,11 @@ const ItemCount = ({ stock, initial, setInitial, price, handlerAdd, hide, btnBuy
         }
 
         if (initial === stock) {
-            alert("es tu oportunidad! :) este es el ultimo disponible")
+            Swal.fire('es tu oportunidad!', 'este es el ultimo disponible', 'info')
             setdisableAdd(false)
         }
         if (initial > stock) {
-            alert("UPS! :( no hay mas productos disponibles")
+            Swal.fire('"UPS!', 'no hay mas productos disponibles', 'error')
         }
         return () => { }
     }, [initial])

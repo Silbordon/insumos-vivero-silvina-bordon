@@ -53,3 +53,11 @@ box-shadow: 3px 4px 14px -4px rgba(113,133,124,0.72);
     border-radius: 9px !important;
 }
 
+.swal2-icon.swal2-info{
+    color: rgb(63, 173, 63) !important;
+    border-color: rgba(64, 126, 64, 0.63) !important;
+}
+
+.swal2-styled.swal2-confirm{
+    background-color: rgb(112, 168, 112) !important;
+}

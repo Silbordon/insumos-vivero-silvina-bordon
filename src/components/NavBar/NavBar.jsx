@@ -34,13 +34,10 @@ const NavBar = () => {
                             <NavDropdown.Item as={Link} to="/category/Cesped">Césped</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link as={Link} to="/regala" className="nav-item">Regalá</Nav.Link>
-                      
                     </Nav>
                     <Navbar.Brand>
                     <CartWidget />
                     </Navbar.Brand>
-                   
-                    
                 </Navbar.Collapse>
             </Container>
         </Navbar>

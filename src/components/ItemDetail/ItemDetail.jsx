@@ -4,6 +4,8 @@ import { Modal } from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import { Row, Col, Container} from 'react-bootstrap';
 import { CartContext } from '../../context/CartContext';
+import Swal from 'sweetalert2'
+
 
 const ItemDetail = (props) => {
     const {result} = props
@@ -24,7 +26,7 @@ const ItemDetail = (props) => {
             //  props.onHide()
              addItem(itemCart);
         }else{
-            alert('tienes este producto repetido en el carrito')
+            Swal.fire('CUIDADO', 'este producto esta repetido en tu carrito', 'warning')
         }
         setBtnBuy(true)
     }
