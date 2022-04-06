@@ -21,7 +21,7 @@ const NavBar = () => {
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
                         className="me-auto my-2 my-lg-0 container"
-                        style={{ maxHeight: '100px' }}
+                        style={{ maxHeight: '100px' }, {zIndex:1000}}
                         navbarScroll
                     >
                         <Nav.Link as={Link} to="/" className="nav-item">Home</Nav.Link>
@@ -34,17 +34,13 @@ const NavBar = () => {
                             <NavDropdown.Item as={Link} to="/category/Cesped">Césped</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link as={Link} to="/regala" className="nav-item">Regalá</Nav.Link>
+                      
                     </Nav>
-                    <Form className="d-flex">
-                        <FormControl
-                            type="search"
-                            placeholder="que deseas buscar..."
-                            className="me-2"
-                            aria-label="Search"
-                        />
-                        <Button variant="outline-success">Buscador</Button>
-                        <CartWidget />
-                    </Form>
+                    <Navbar.Brand>
+                    <CartWidget />
+                    </Navbar.Brand>
+                   
+                    
                 </Navbar.Collapse>
             </Container>
         </Navbar>
